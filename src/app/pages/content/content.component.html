@@ -1,17 +1,19 @@
 <div class="container__content">
   <div class="content__cover">
     <img
-    src="https://i.ytimg.com/vi/cFB6LAXXJ7s/maxresdefault.jpg"
+    src="{{ photoCover }}"
     alt=""
     srcset=""
   >
   </div>
   <div class="content__title">
-    <h1>MINHA NOTICIA</h1>
+    <h1>{{ contentTitle }}</h1>
+    <hr />
   </div>
   <div class="content__description">
+    <a [routerLink]="['']"> << VOLTAR</a>
     <p>
-      olá mundo
+      {{ contentDescription }}
     </p>
   </div>
 </div>
