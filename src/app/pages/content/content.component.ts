@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -7,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
   photoCover:string ="https://th.bing.com/th/id/OIP.0flS2ZP6BT4WxWWsiAemCgHaER?pid=ImgDet&rs=1"
-  contentTitle:string =""
-  contentDescription:string =""
+  contentTitle:string ="NOTICIA EXEMPLO"
+  contentDescription:string ="bla bla bla"
 
-  constructor() { }
+  constructor(
+    private ROUTE:ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.ROUTE.paramMap.subscribe( value =>
+      console.log(value.get("id"))
+    )
   }
 
 }
